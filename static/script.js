@@ -1,34 +1,16 @@
+let x = 5;
+let y = 7;
+
+let A = "Hello ";
+let B = "world!";
+
+var L1 = ["Watermelon", "Pineapple", "Pear", "Banana"];
+var L2 = ["Apple", "Banana", "Kiwi", "Orange"];
+
 function SumNPrint(x1, x2) {
     let x3 = x1 + x2;
     console.log(x3);
 }
-
-let x = 5;
-let y = 7;
-let z = x + y;
-console.log(z);
-
-
-let A = "Hello ";
-let B = "world!";
-let C = A + B;
-console.log(C);
-
-SumNPrint(x, y);
-SumNPrint(A, B);
-
-
-
-if (C.length > z) {
-    console.log(C);
-} else if (C.length < z) {
-    console.log(z);
-} else {
-    console.log("good job!");
-}
-
-let L1 = ["Watermelon", "Pineapple", "Pear", "Banana"];
-let L2 = ["Apple", "Banana", "Kiwi", "Orange"];
 
 function findTheBanana(item) {
     if (item === "Banana") {
@@ -36,16 +18,6 @@ function findTheBanana(item) {
     }
 }
 
-L1.forEach(function(item){
-    if (item === "Banana") {
-        alert("We foud a banana in the first array");
-    }
-});
-L2.forEach(function(item){
-    if (item === "Banana") {
-        alert("We foud a banana in the second array");
-    }
-});
 
 function greetingFunc() {
     let d = new Date();
@@ -64,8 +36,40 @@ function greetingFunc() {
 
 }
 
-if (window.location.href.includes('index.html')) {
-    greetingFunc();
-} else {
-    console.log("Greeting function does not execute on this page.");
+function myFirstFunction(){
+    var z = x + y;
+    console.log(z);
+    var C = A + B;
+    console.log(C);
+
+    SumNPrint(x, y);
+    SumNPrint(A, B);
+
+    if (C.length > z) {
+        console.log(C);
+    } else if (C.length < z) {
+        console.log(z);
+    } else {
+        console.log("good job!");
+    }
+
+    L1.forEach(function(item){
+        if (item === "Banana") {
+            alert("We foud a banana in the first array");
+        }
+    });
+    L2.forEach(function(item){
+        if (item === "Banana") {
+            alert("We foud a banana in the second array");
+        }
+    });
+
+    if (window.location.href.includes('index.html')) {
+        greetingFunc();
+    } else {
+        console.log("Greeting function does not execute on this page.");
+    }
 }
+
+
+myFirstFunction();
