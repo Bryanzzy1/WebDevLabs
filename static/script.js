@@ -5,14 +5,19 @@ function SumNPrint(x1, x2) {
 
 let x = 5;
 let y = 7;
-SumNPrint(x, y);
+let z = x + y;
+console.log(z);
+
 
 let A = "Hello ";
 let B = "world!";
+let C = A + B;
+console.log(C);
+
+SumNPrint(x, y);
 SumNPrint(A, B);
 
-let z = x + y;
-let C = A + B;
+
 
 if (C.length > z) {
     console.log(C);
