@@ -32,12 +32,20 @@ let L2 = ["Apple", "Banana", "Kiwi", "Orange"];
 
 function findTheBanana(item) {
     if (item === "Banana") {
-        alert("We foud a banana in the array");
+        alert("We foud a banana in the " + arrays + " array");
     }
 }
 
-L1.forEach(findTheBanana);
-L2.forEach(findTheBanana);
+L1.forEach(function(item){
+    if (item === "Banana") {
+        alert("We foud a banana in the first array");
+    }
+});
+L2.forEach(function(item){
+    if (item === "Banana") {
+        alert("We foud a banana in the second array");
+    }
+});
 
 function greetingFunc() {
     let d = new Date();
