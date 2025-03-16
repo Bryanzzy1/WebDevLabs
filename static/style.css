@@ -47,3 +47,27 @@ form{
         border-radius: 5px;
     }
 }
+
+#funList {
+    display: none;
+}
+
+#showButton {
+    background-color: lightgrey;
+    color: black;
+    font-size: 16px;
+    border-radius: 5px;
+    border:none;
+}
+
+#fullBio {
+    display: none;
+}
+
+#readMoreBtn, #readLessBtn {
+    background-color: lightgrey;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}

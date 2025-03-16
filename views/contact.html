@@ -7,34 +7,37 @@
     <meta name="description" content="Bryan Zhong professional website">
     <title>Bryan Zhong Document</title>
     <link rel="stylesheet" href="../static/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <script src=".././static/script.js" defer></script>
+    <script src="../static/script.js" defer></script>
 </head>
 
-<body style="font-family: Arial">
+<body style="font-family: Arial" onload="addYear()">
     <header>
         <h1 id="webname">Bryan Zhong</h1>
         <nav>
             <a href="../index.html"> Home</a>
             <a href="./cv.html">CV</a>
-            <a href="./contact.html">Contact</a>
             <a href="./fun.html">For Fun</a>
+            <a href="./contact.html">Contact</a>
         </nav>
     </header>
     <main>
         <h2>Contact Me</h2>
-        <form>
-            <label for="name">Your Name(Required):</label>
+        <form id="contactForm">
+            <label for="name">Your Name (Required):</label>
             <input type="text" id="name" name="name" required>
-            <label for="email">Your Email:</label>
-            <input type="email" id="email" name="email">
-            <label for="comment">Your Comment:</label>
-            <textarea id="comment" name="comment" rows="4" required></textarea>
-            <button type="submit">SEND</button>
+
+            <label for="email">Your Email (Required):</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="comment">Your Comment (Required):</label>
+            <textarea id="comment" name="comment" rows="6" required></textarea>
+
+            <button type="submit" onclick="formValidation()">SEND</button>
+            <p id="formError"></p>
         </form>
+
         <table>
             <tr>
                 <th>Contact Method</th>
@@ -53,7 +56,8 @@
                 <td><a href="http://www.linkedin.com/in/zzybryan">LinkedIn Profile</a></td>
             </tr>
         </table>
-        <footer>@2025 designed and coded by Bryan Zhong</footer>
+        <footer id="copyYear">
+        </footer>
     </main>
 </body>
 
