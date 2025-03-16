@@ -78,7 +78,7 @@ if (window.location.href.includes('index.html')) {
         greetingFunc();
     } else {
        console.log("Greeting function does not execute on this page.");
-     }
+    }
 
 function addYear() {
     let year = new Date().getFullYear();
