@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <script src="../static/script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body style="font-family: Arial" onload="addYear()">
@@ -24,43 +25,54 @@
             <a href="./contact.html">Contact</a>
         </nav>
     </header>
-    <main>
-        <h2>Contact Me</h2>
-        <form id="contactForm">
-            <label for="name">Your Name (Required):</label>
-            <input type="text" id="name" name="name" required>
 
-            <label for="email">Your Email (Required):</label>
-            <input type="email" id="email" name="email" required>
+    <main class="mainLayoutc">
+        <div class="item1c">
+            <h2>Find Me</h2>
+            <iframe 
+                class="mapFrame"
+                src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d6436.638857293931!2d-79.9428499!3d40.4432027!3m2!1i1024!2i768!4f13.1!2m1!1scmu%20google%20maps!5e1!3m2!1sen!2sus!4v1742404548838!5m2!1sen!2sus"
+                allowfullscreen>
+            </iframe>
+        </div>
 
-            <label for="comment">Your Comment (Required):</label>
-            <textarea id="comment" name="comment" rows="6" required></textarea>
+        <div class="item2c">
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <label for="name">Your Name (Required):</label>
+                <input type="text" id="name" name="name" required>
 
-            <button type="submit" onclick="formValidation()">SEND</button>
-            <p id="formError"></p>
-        </form>
+                <label for="email">Your Email (Required):</label>
+                <input type="email" id="email" name="email" required>
 
-        <table>
-            <tr>
-                <th>Contact Method</th>
-                <th>Description</th>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td>zzhong3@andrew.cmu.edu</td>
-            </tr>
-            <tr>
-                <td>Phone</td>
-                <td>(412)-218-5611</td>
-            </tr>
-            <tr>
-                <td>LinkedIn</td>
-                <td><a href="http://www.linkedin.com/in/zzybryan">LinkedIn Profile</a></td>
-            </tr>
-        </table>
-        <footer id="copyYear">
-        </footer>
+                <label for="comment">Your Comment (Required):</label>
+                <textarea id="comment" name="comment" rows="6" required></textarea>
+
+                <button type="submit" onclick="formValidation()">SEND</button>
+                <p id="formError"></p>
+            </form>
+        </div>
     </main>
+    <table>
+        <tr>
+            <th>Contact Method</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>zzhong3@andrew.cmu.edu</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>(412)-218-5611</td>
+        </tr>
+        <tr>
+            <td>LinkedIn</td>
+            <td><a href="http://www.linkedin.com/in/zzybryan">LinkedIn Profile</a></td>
+        </tr>
+    </table>
+
+    <footer id="copyYear"></footer>
 </body>
 
 </html>

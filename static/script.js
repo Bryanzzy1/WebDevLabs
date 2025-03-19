@@ -75,10 +75,15 @@ function greetingFunc() {
 // myFirstFunction();
 
 if (window.location.href.includes('index.html')) {
-        greetingFunc();
-    } else {
-       console.log("Greeting function does not execute on this page.");
-    }
+    greetingFunc();
+} else {
+    console.log("Greeting function does not execute on this page.");
+}
+
+//
+if (window.location.href.includes("fun.html")) {
+    document.getElementById(".adviceBtn").onclick = getAdvice;
+}
 
 function addYear() {
     let year = new Date().getFullYear();
@@ -86,10 +91,10 @@ function addYear() {
     D.innerHTML = "Designed and coded by Bryan Zhong © " + year;
 }
 
-function showList() {
-    document.getElementById("funList").style.display = "block";
-    document.getElementById("showButton").style.display = "none";
-}
+// function showList() {
+//     document.getElementById("funList").style.display = "block";
+//     document.getElementById("showButton").style.display = "none";
+// }
 
 $(function () {
     $("#fullBio, #readLessBtn").hide();
@@ -107,7 +112,7 @@ $(function () {
     });
 });
 
-function formValidation(){
+function formValidation() {
     let name = document.getElementById("name");
     let email = document.getElementById("email");
     let comment = document.getElementById("comment");
@@ -119,3 +124,14 @@ function formValidation(){
         formError.innerHTML = "";
     }
 };
+
+function getAdvice() {
+    fetch("https://api.adviceslip.com/advice")
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("adviceText").innerText = data.slip.advice;
+        })
+        .catch(() => {
+            document.getElementById("adviceText").innerText = "Oops! Something went wrong. Try again.";
+        });
+}
