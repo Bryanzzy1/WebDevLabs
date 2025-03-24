@@ -18,24 +18,6 @@
 //     }
 // }
 
-
-function greetingFunc() {
-    let d = new Date();
-    let h = d.getHours();
-
-    let E = document.getElementById("greeting");
-    if (h < 12) {
-        E.innerHTML = "Good morning, my name is Bryan Zhong";
-    } else if (h < 18) {
-        E.innerHTML = "Good afternoon, my name is Bryan Zhong";
-    } else if (h < 20) {
-        E.innerHTML = "Good evening, my name is Bryan Zhong";
-    } else if (h < 24 || h < 5) {
-        E.innerHTML = "Good night, my name is Bryan Zhong";
-    }
-
-}
-
 // function myFirstFunction(){
 //     var z = x + y;
 //     console.log(z);
@@ -74,15 +56,27 @@ function greetingFunc() {
 
 // myFirstFunction();
 
-if (window.location.href.includes('index.html')) {
-    greetingFunc();
-} else {
-    console.log("Greeting function does not execute on this page.");
-}
+// function showList() {
+//     document.getElementById("funList").style.display = "block";
+//     document.getElementById("showButton").style.display = "none";
+// }
 
-//
-if (window.location.href.includes("fun.html")) {
-    document.getElementById(".adviceBtn").onclick = getAdvice;
+
+function greetingFunc() {
+    let d = new Date();
+    let h = d.getHours();
+
+    let E = document.getElementById("greeting");
+    if (h < 12) {
+        E.innerHTML = "Good morning, my name is Bryan Zhong";
+    } else if (h < 18) {
+        E.innerHTML = "Good afternoon, my name is Bryan Zhong";
+    } else if (h < 20) {
+        E.innerHTML = "Good evening, my name is Bryan Zhong";
+    } else if (h < 24 || h < 5) {
+        E.innerHTML = "Good night, my name is Bryan Zhong";
+    }
+
 }
 
 function addYear() {
@@ -90,11 +84,6 @@ function addYear() {
     let D = document.getElementById("copyYear");
     D.innerHTML = "Designed and coded by Bryan Zhong © " + year;
 }
-
-// function showList() {
-//     document.getElementById("funList").style.display = "block";
-//     document.getElementById("showButton").style.display = "none";
-// }
 
 $(function () {
     $("#fullBio, #readLessBtn").hide();
@@ -124,6 +113,35 @@ function formValidation() {
         formError.innerHTML = "";
     }
 };
+
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+
+function highlightCurrentPage() {
+    let currentPage = window.location.href.split('/').pop();
+    let links = document.querySelectorAll('nav a');
+    
+    links.forEach(link => {
+        let linkPage = link.href.split('/').pop();
+        if (currentPage === linkPage) {
+            link.classList.add('active');
+        }
+    });
+}
+
+highlightCurrentPage();
+
+if (window.location.href.includes('index.html')) {
+    greetingFunc();
+} else {
+    console.log("Greeting function does not execute on this page.");
+}
+
+if (window.location.href.includes("fun.html")) {
+    document.querySelector(".adviceBtn").onclick = getAdvice;
+}
 
 function getAdvice() {
     fetch("https://api.adviceslip.com/advice")

@@ -1,48 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="author" content="Bryan Zhong">
     <meta name="keywords" content="Carnegie Mellon University, Information Systems">
     <meta name="description" content="Bryan Zhong professional website">
-    <title>Bryan Zhong Document</title>
-    <link rel="stylesheet" href="static/style.css">
+    <title>Bryan Zhong - Home</title>
+    <link rel="stylesheet" href="static/template.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="./static/script.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+<body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <div class="name-section">
+                <h1 id="webname">Bryan Zhong</h1>
+            </div>
+            <nav class="nav">
+                <div class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="./views/cv.html">CV</a>
+                    <a href="./views/fun.html">For Fun</a>
+                    <a href="./views/contact.html">Contact</a>
+                </div>
+            </nav>
+        </header>
 
-<body style="font-family: Arial" onload="addYear()">
-    <header>
-        <h1 id="webname">Bryan Zhong</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="./views/cv.html">CV</a>
-            <a href="./views/fun.html">For Fun</a>
-            <a href="./views/contact.html">Contact</a>
-        </nav>
-    </header>
-    <main>
-        <h2 id="greeting">Hi, my name is Bryan</h2>
-        <img src="static/BryanZhongPicture.jpg" alt="Profile Picture" width="203" height="389">
+        <main class="main">
+            <section class="profile-section">
+                <div class="profile-image">
+                    <img src="static/BryanZhongPicture.jpg" alt="Profile Picture" width="203" height="389">
+                </div>
+                <div class="profile-content">
+                    <h2 id="greeting">Hi, my name is Bryan</h2>
+                    <p>Hi, I'm Bryan Zhong! I'm a passionate researcher studying Information Systems at Carnegie Mellon University.</p>
+                    <p id="fullBio">
+                        My work involves cybersecurity, machine learning, and data-driven techniques.
+                        I thrive in collaborative environments and enjoy tackling challenges under pressure.
+                        Outside of academics, I'm an Ultimate Frisbee player (competing on CMU's A Team), a violinist, and a soccer enthusiast.
+                        I believe in balancing rigorous research with creativity and teamwork, both on and off the field.
+                    </p>
+                    <div class="button-group">
+                        <button id="readMoreBtn">Read More</button>
+                        <button id="readLessBtn">Read Less</button>
+                    </div>
+                </div>
+            </section>
 
-        <p id="shortBio">Hi, I’m Bryan Zhong! I’m a passionate researcher studying Information Systems at Carnegie Mellon University.</p>
+            <section class="content-section">
+                <div class="main-content">
+                    <h2>Research Interests</h2>
+                    <ul>
+                        <li>Cybersecurity</li>
+                        <li>Machine Learning</li>
+                        <li>Data Analytics</li>
+                        <li>Information Systems</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
 
-        <p id="fullBio">
-            My work involves cybersecurity, machine learning, and data-driven techniques.
-            I thrive in collaborative environments and enjoy tackling challenges under pressure.
-            Outside of academics, I’m an Ultimate Frisbee player (competing on CMU’s A Team), a violinist, and a soccer enthusiast.
-            I believe in balancing rigorous research with creativity and teamwork, both on and off the field.
-        </p>
-
-        <button id="readMoreBtn">Read More</button>
-        <button id="readLessBtn">Read Less</button>
-        <footer id="copyYear">
+        <footer class="footer">
+            <p id="copyYear"></p>
         </footer>
-    </main>
+    </div>
 </body>
-
 </html>
